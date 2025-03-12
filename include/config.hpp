@@ -2,10 +2,9 @@
 #define CONFIG_HPP
 
 #include <string>
-#include <stdexcept>
-#include <fstream>
+#include <map>
 
-// 从指定文件中读取 API 密钥（读取文件的第一行）
-std::string getApiKey(const std::string& filePath);
+// 从 JSON 文件中加载 API 密钥，返回角色与密钥的映射
+std::map<std::string, std::string> loadApiKeys(const std::string &filePath);
 
 #endif // CONFIG_HPP
